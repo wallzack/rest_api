@@ -2,6 +2,16 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "4.17.1",
-    "uuid": "^7.0.2"
+    "uuid": "^7.0.2",
+    "nodemon": "^2.0.2"
+  },
+  "name": "rest_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wallzack/rest_api.git",
+  "author": "wallzack <vulcheek@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js"
   }
 }
