@@ -12,8 +12,7 @@
   "author": "wallzack <vulcheek@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js"
-  },
-  "build": "cd client && yarn install && yarn build"
-
+    "start": "nodemon server.js",
+    "build": "cd client && yarn install && yarn build"
+  }
 }
