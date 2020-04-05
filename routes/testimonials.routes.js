@@ -18,7 +18,7 @@ router.route('/testimonials/:id').get((req, res) => {
 router.route('/testimonials').post((req, res) => {
   const { author, text } = req.body;
   const id = uuidv4();
-  res.json({ message: 'ok' });
+  res.json(db.testimonials.push ({ id: id, author: author, text: test}));
 });
 
 
@@ -28,7 +28,7 @@ router.route('/testimonials/:id').put((req, res) => {
 });
 
 router.route('/testimonials/:id').delete((req, res) => {
-  res.json({ message: 'ok' });
+  res.json(db.testimonials.splice(req.params.id -1, 1));
 });
 
 router.route('/testimonials').get((req, res) => {
