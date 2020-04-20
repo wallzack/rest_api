@@ -6,6 +6,9 @@
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
     "socket.io": "^2.3.0",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.0",
+    "onchange": "^6.1.0",
     "uuid": "^7.0.2"
   },
   "name": "rest_app",
@@ -16,6 +19,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon server.js",
-    "build": "cd client && yarn install && yarn build"
+    "build": "cd client && yarn install && yarn build",
+    "test": "mocha \"./models/**/*.test.js\"",
+    "test:watch": "onchange \"./**/*.js\" -i -k -- yarn test"
   }
 }
