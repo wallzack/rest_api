@@ -24,12 +24,4 @@ describe('Workshop', () => {
             });
         }
     });
-
-    it('should return proper workshop if args are correct', () => {
-        const workshop = new Workshop({ name: 'Test name', concertID: 'John Doe' });
-
-        workshop.validate(err => {
-            expect(err).to.not.exist;
-        });
-    });
 });

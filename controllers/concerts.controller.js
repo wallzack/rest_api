@@ -1,14 +1,24 @@
 const Concert = require('../models/concert.model');
+const Workshop = require('../models/workshop.model');
 
 exports.getAll = async (req, res) => {
+
   try {
-    res.json(await Concert.find());
+    const concerts = await Concert.find();
+
+    for (let concert of concerts) {
+      concert.workshops = await Workshop.find({ concertID: concert._id });
+      await concert.save();
+    }
+
+    res.json(await Concert.find().populate('workshops'));
   } catch(err) {
     res.status(500).json(err);
   }
 };
 
 exports.getOne = async (req, res) => {
+
   try {
     const concert = await Concert.findById(req.params.id);
 
@@ -25,6 +35,7 @@ exports.getOne = async (req, res) => {
 
 exports.post = async (req, res) => {
   const { performer, genre, price, day } = req.body;
+
   try {
     const newConcert = new Concert({
       performer: performer,
@@ -40,6 +51,7 @@ exports.post = async (req, res) => {
 };
 
 exports.delete = async (req, res) => {
+
   try {
     const concert = await(Concert.findById(req.params.id));
 
@@ -56,6 +68,7 @@ exports.delete = async (req, res) => {
 
 exports.put = async (req, res) => {
   const { performer, genre, price, day } = req.body;
+
   try {
     const concert = await Concert.findById(req.params.id);
 
