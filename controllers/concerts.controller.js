@@ -7,7 +7,7 @@ exports.getAll = async (req, res) => {
     const concerts = await Concert.find();
 
     for (let concert of concerts) {
-      concert.workshops = await Workshop.find({ concertID: concert._id });
+      concert.workshops = await Workshop.find({ concertId: concert._id });
       await concert.save();
     }
 

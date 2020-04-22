@@ -8,7 +8,7 @@ describe('Workshop', () => {
 
         workshop.validate(err => {
             expect(err.errors.name).to.exist;
-            expect(err.errors.concertID).to.exist;
+            expect(err.errors.concertId).to.exist;
         });
     });
 
@@ -20,7 +20,7 @@ describe('Workshop', () => {
             
             workshop.validate(err => {
                 expect(err.errors.name).to.exist;
-                expect(err.errors.concertID).to.exist;
+                expect(err.errors.concertId).to.exist;
             });
         }
     });
