@@ -36,20 +36,10 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Not found...' });
 });
 
-// mongoose.connect('mongodb+srv://${process.env.dbUser}:${process.env.dbPass}@cluster0-ksbbn.mongodb.net/NewWaveDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+process.env.NODE_ENV === "production" ?
+  mongoose.connect('mongodb+srv://${process.env.dbUser}:${process.env.dbPass}@cluster0-ksbbn.mongodb.net/NewWaveDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }) :
+  mongoose.connect('mongodb://localhost:27017/NewWaveDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
-process.env.NODE_ENV === 'production'
-  ? mongoose.connect(
-      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0-o1j4s.mongodb.net/NewWaveDB?retryWrites=true&w=majority`,
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      }
-    )
-  : mongoose.connect('mongodb://localhost:27017/NewWaveDB', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
 
 const db = mongoose.connection;
 
