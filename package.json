@@ -5,7 +5,7 @@
     "express": "4.17.1",
     "helmet": "3.21.1",
     "mocha": "^7.1.0",
-    "mongo-sanitize": "1.0.1",
+    "mongo-sanitize": "1.1.0",
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
     "nodemon": "^2.0.3",
