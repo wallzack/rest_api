@@ -8,7 +8,7 @@
     "mongo-sanitize": "1.0.1",
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
-    "nodemon": "^2.0.3",
+    "nodemon": "^2.0.17",
     "onchange": "^6.1.0",
     "snyk": "^1.313.1",
     "socket.io": "^2.3.0",
